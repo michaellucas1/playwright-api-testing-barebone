@@ -1,7 +1,9 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
-
+import dotenv from "dotenv";
 test('has title', async ({ page }) => {
+  const temp = process.env.BASE_URL;
+  console.log(temp);
   await page.goto('https://playwright.dev/');
 
   // Expect a title "to contain" a substring.
